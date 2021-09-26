@@ -1,4 +1,4 @@
-# SOLUTION - Component Based UI
+# Component Based UI
 
 ## Lab Requirements
 
@@ -16,9 +16,9 @@ Students will be creating and styling a Counter application. Look for the follow
 - Features
   - As noted
 - Code Quality
-  - Looking for proper class syntax
-  - Good file naming and folder structure
-  - Styles well written, using SASS variables/nesting and thought through beyond simple colors
+  - Looking for proper class syntax.
+  - Good file naming and folder structure.
+  - Styles well written, using SASS variables/nesting and thought through beyond simple colors.
 - Testing
   - Not Required
 - Deployment

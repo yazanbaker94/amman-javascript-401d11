@@ -1,4 +1,4 @@
-# LAB -  `<Login />` and `<Auth />`
+k# LAB -  `<Login />` and `<Auth />`
 
 **To Do List Manager Phase 3:** Adding security and access controls to the application.
 
@@ -35,24 +35,34 @@ Logged-In User:
 
 ## Technical Requirements / Notes
 
-Technical requirements for the core application are unchanged from the prior phases, with the following additions and notes:
+> Technical requirements for the core application are unchanged from the prior phases, with the addition of an Authentication Context Provider and Components that consume the Context Values and Behaviors.
 
-- Provide an account login screen
-  - Accepts Username and Password
-  - On successful login, store the token as a cookie
-- If a user returns and has a valid login cookie, bypass the login screen and consider them "Logged In"
+1. Implement a Login/Auth React Context, "protect" the To Do application by restricting access to the various application features based on the users' login status and capabilities.
+   - Define a function that can simulate a `login` event.
+     - Parameters: username and password as strings.
+     - Sets a `User` on the auth context, and changes login status to `true`.
+   - Define a function that can simulate a `logout` event.
+     - Resets the `User` object and changes login status to `false.
+   - Define a function that can `authorize` a User based on a capabilty.
+     - Parameters: a capability as a string.
+     - Returns a boolean whether the `user` has the capabililty parameter.
 
-Using Login/Auth Context, "protect" the To Do application by restricting access to the various application features based on the users' login status and capabilities.
+1. Create an `<Auth />` component with the following features:
+   - Given a capability prop of type string, conditionally render components based on the `user` stored in `context`.
+   - **Hide the entire interface until the user has logged in.**
+   - **Implements the following RBAC rules:**
+     - Logged In Users with 'read' permissions can see the summary/count.
+     - Logged In Users with 'read' permissions can see the list of To Do Items.
+     - Logged In Users with 'update' permissions can click the records to mark them as complete.
+     - Logged In Users with 'create' permissions can create new items.
+     - Logged In Users with 'delete' permissions can delete items.
 
-- Implement `<Login />` and `<Auth />` components with Context
-- Link to the Login screen in your main menu
-  - **Hide the entire interface until the user has logged in.**
-  - **Implement the following RBAC rules:**
-    - Logged In Users with 'read' permissions can see the summary/count
-    - Logged In Users with 'read' permissions can see the list of To Do Items
-    - Logged In Users with 'update' permissions can click the records to mark them as complete
-    - Logged In Users with 'create' permissions can create new items
-    - Logged In Users with 'delete' permissions can delete items
+1. Implement a `<Login />` Component that has the following features:
+   - Provide an account login screen with a form.
+     - Accepts Username and Password
+     - On successful login, store the token as a cookie
+   - If a user returns and has a valid login cookie, hide the login form and consider them "Logged In"
+     - Display a logout button instead of a form if they are "Logged In".
 
 ### Tools you will need to complete the above requirements
 

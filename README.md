@@ -1,107 +1,129 @@
-# 401 Advanced Javascript
+# Final Projects
 
-## Course Overview
+## Drop the Mic and Stuff Your Resume
 
-This course is divided into 8 Modules, extending over 2 sections.
+Your final project should be a full showcase of the talents you've cultivated during your time here, your creativity, you ability to problem solve, work in a team, and meet a harsh deadline.
 
-The first half of the course (the "Backend Section") is made up of 4 modules:
+## Core Requirements
 
-- REST APIs
-- Authentication and Authorization
-- Realtime (Sockets, Messages, Queuing)
-- Serverless Applications
+- Use any, all, most, or none of what you learned ...
+  - Make sure it works great
+  - Make sure it looks amazing
+  - Make sure it's covered in tests
 
-The second half of the course (the "Frontend Section") is comprised of 4 modules, focused on React
+Tools At Your Disposal
 
-- React Basics / Component Based Design
-- Hooks and Context
-- Redux
-- React Native and other Frameworks
+- Express Web Server with EJS
+- Express Custom API Server
+- Authentication, Authorization, RBAC
+- Remote APIs
+- SQL
+- Mongo
+- Socket.io
+- React
+- SASS
+- React Native (Mobile)
+- ... or teach yourself something totally new this week!
 
-## Course Goals
+## Workflow
 
-### Students will be able to demonstrate
+- To manage Tasks ...
+  - Agile / Kanban Workflow
+  - Project Management System
+    - [Trello](https://trello.com/b/2GAur1IN/open-shelf-a-book-wiki?menu=filter&filter=label:Lab%2014)
+    - [Github Projects](https://help.github.com/articles/about-project-boards/)
+    - [Jira](https://www.atlassian.com/software/jira)
+    - [Azure Boards](https://azure.microsoft.com/en-us/services/devops/boards/)
 
-- Mastery of JavaScript Fundamentals
-  - Objects, Factories, Classes
-  - Standard and Arrow Functions
-  - Looping, Iteration, Traversal of Arrays and Objects
-  - Recursion
-  - Documentation best practices with JSDoc
-- Understanding of core data structures
-  - When each structure is most appropriate
-  - Real world applications of each structure
-  - Looping, Iteration, Traversal
-    - Stacks & Queues
-    - Linked Lists
-    - Trees
-    - Graphs
-    - Hash Tables
-- Creation and operation of an Express web server
-  - Static Routes
-  - Dynamic Routes
-- Creation and operation of an Express API Server
-  - RESTful, Dynamic Model Management
-  - Authenticated Access with RBAC
-  - Swagger Documentation
-- Event driven application development using Socket.io and Web Sockets
-- Creation and operation of a Socket.io Message Queue Server and Client Library
-- Creation of a single page web app in React
-- Creation of a mobile app with React Native
-- Deploy a website to AWS, Heroku, Netlify
-- Deploy an API, Database, Lambda Functions, and Queueing Service at AWS
+- To Manage and Deploy Code
+  - SCM: Use the strict [Git Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+  - Deployment:
+    - Local dev/feature branches
+      - One Branch Per Feature
+    - Staging (Pre-Production) Branch
+    - Master (Production) Branch
+  - Developers work locally in feature branches
+  - Check-in and merge PRs against `stage`
+  - Deploy `stage` to a pre-production server (Heroku, AWS, or Azure)
+  - Once verified, PR stage against master and deploy to production server
+  - Protect master from direct check-ins
+  - Only Leads (TAs) can merge from Stage to Master
+  - Testing: Hook in GitHub Actions for live code testing
+  - Automation: Automate your deployment from Stage and Master to your service of choice.
 
-## Student Operation
+## Development Schedule
 
-### Students will **fork*- the class repository
+### Class 45 (Project Planning)
 
-It's advisable that students first make an new organization in Github (perhaps called '401-js-their-name') that these repositories can be created in, to organize things better.
+- Create your GitHub organization
+  - Back-End Repo
+  - Front-End Repo
+  - Other Repo's for supporting services
+- Deploy a simple "Hello World" server through your full pipeline
+  - Stage and Production of all servers
+  - Tests hooked up and passing
+- Get your project board setup with your initial stories
+  - At this stage, its's probably just stories to write more stories...
+- Get your Wiki setup for documentation
 
-### ASSIGNMENTS
+### Class 46 (Project Start)
 
-- **READING (Due before each lecture)**
-  - Reading assignments should be done as articles/notes in the **wiki*- of their repo fork
+- Wireframes Complete
+- User workflows finalized
+- Initial design planned
+- Code
 
-- **LAB Assignments (4 per module)**
-  - 10 Points (graded on the rubric)
-  - ~ 3-5 Hours
-  - Should be completed in a new repository for each day
-  - Generally, these are smaller implementations, refactors, and practice to support the lecture concept. Not necessarily a full-scale application.
-  - Code must be tested through GitHub Actions and deployed through either Heroku or AWS
-  - JS Code must be documented with JSDoc
-  - Students must use the README.md template (from the resources folder) to complete their assignment
-  - The README requires working links to deployed code, GitHub Actions tests, functional documentation, test documentation and a UML and/or data-flow diagram.
+### Class 47 (Core MVP)
 
-- **DS&A IMPLEMENTATION**
-  - 10 Points (complete/incomplete)
-  - Installed at the root level of your `data-structures-and-algorithms` repository
-  - These will be used as libraries to solve code challenges
+- First MVP should be completed by EOD
+- Your core functionality should be working end to end.
+  - Databases Hooked up and saving
+  - User workflow works (navigation, actions)
 
-- **DS&A CODE CHALLENGE (4 per module)**
-  - 5 points (3 points for whiteboard, 1 point for testing, 1 point for working code)
-  - Generally requires a working implementation (above) to work
-  - TimeBox execution to ~ 1 Hour
+### Class 48 (Final MVP)
 
-- **END OF EACH MODULE**
-  - New Data Structure (as noted above): Modules 1,2,3 & 6,7,8
-  - Project Group Prep: Modules 4 and 8
-  - Generally Paired
-  - Takes the learnings/components/modules from the previous 4 classes and has the students assemble them into a larger/full-scale application.
+- Adding Non-Breaking Features
+- Layering on the Styles
+- Final "MVP" should be complete
+  - Whatever you have by EOD should be presentation ready
+  - Anything you add from this point on is purely additive.
 
-## Course At a Glance
+### Class 49
 
-| Module 1 (Project: Dynamic API)                   | Module 2 (Project: Authenticated API)            | Module 3 (Project: CAPS Delivery System)      | Module 4 (Project: Serverless)              |
-|---------------------------------------------------|--------------------------------------------------|-----------------------------------------------|---------------------------------------------|
-| [01: JS Fundamentals](./class-01/README.md)       | [06: Basic Authentication](./class-06/README.md) | [11: Events](./class-11/README.md)            | [16: Serverless Apps](./class-16/README.md) |
-| [02: Express, Testing](./class-02/README.md)      | [07: Bearer Authentication](./class-07/README.md)| [12: Socket.io](./class-12/README.md)         | [17: Lambda & S3](./class-17/README.md)     |
-| [03: REST APIs](./class-03/README.md)             | [08: Authentication / ACL](./class-08/README.md) | [13: Message Queues](./class-13/README.md)    | [18: Serverless API](./class-18/README.md)  |
-| [04: Data Modeling](./class-04/README.md)         | [09: Authenticated API](./class-09/README.md)    | [14: Event Driven Apps](./class-14/README.md) | [19: Cloud Events](./class-19/README.md)    |
-| 05: Career Coaching, DS&A                         | 10: Career Coaching, DS&A                        | 15: Career Coaching, DS&A                     | [20: Project Preparation                    |
-| Module 5: Mid-Term Projects                       |                                                  |                                               |                                             |
-| Module 6 (Project: RESTy)                         | Module 7 (Project: TO DO, Bootstrap)             | Module 8 (Project: e-Commerce, Material UI)   | Module 9 (Project: Personal Projects)       |
-| [26: React Basics](./class-26/README.md)          | [31: Hooks API](./class-31/README.md)            | [36: Redux](./class-36/README.md)             | [41: React Native](./class-40/README.md)    |
-| [27: Testing & Deployment](./class-27/README.md)  | [32: Custom Hooks](./class-32/README.md)         | [37: Combined Reducers](./class-37/README.md) | [42: React Native](./class-41/README.md)    |
-| [28: Props & State](./class-28/README.md)         | [33: Context API](./class-33/README.md)          | [38: Async Actions](./class-38/README.md)     | [43: UI Frameworks](./class-42/README.md)   |
-| [29: Routing & Composition](./class-29/README.md) | [34: Login/Auth](./class-34/README.md)           | [39: Redux Toolkit](./class-39/README.md)     | 44: Open Source Contributions .             |
-| 30: Career Coaching, DS&A                         | 35: Career Coaching, DS&A                        | 40: Career Coaching, DS&A                     | 45: Project Preparation                     |
-| Module 20: Final Projects                         |                                                  |                                               |                                             |
+- Final Polish
+- Presentation Practice
+
+### Class 50 (Graduation Day)
+
+- Eat.
+- Drink.
+- Present.
+- Graduate.
+- Win.
+
+## Presentations
+
+- Prepare a Powerpoint Style "deck" to present your project
+- Slide 1: Team Name and Logo
+- Slide 2: Summary of the project
+- One slide for each team member.
+  - Picture, 2-3 bullet points about you
+  - Introduce yourself, touch on your role in the team, and present your personal pitch.
+- Slide: Describe your problem domain in more bullet points
+- Slide: Sell your solution
+- Move to a stellar demo of the working application
+- Show Your Tests
+- Slide: Detail your workflow and process
+- Slide: Highlight your wins
+- Slide: Highlight areas for growth
+- Questions and Answers
+
+Why a deck? It's a helpful tool to keep you on time and on focus. Also, you will spend a lot of time in dev jobs speaking in front of a deck, so this is good practice for that. Know what's on screen behind you and prepare to speak in what appears to be an 'ad-hoc' fashion in front of it.
+
+[Sample Presentation Deck](https://docs.google.com/presentation/d/1NeXKKEpjK2DDme8EwlZBsJndUqIgGYzWrY6FAYtNTf0/edit#slide=id.g2accd1c413_3_31)
+
+## Tips and Tricks
+
+- Solve a real business or community problem
+- Deliver something desirable (make it rock!)
+- Don't over-complicate. Sometimes, the simplest solution can be the most scalable and stable. Favor stability and tightness over wizardry

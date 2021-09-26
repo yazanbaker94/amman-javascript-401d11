@@ -1,6 +1,6 @@
 # LAB: Authentication
 
-**Authentication System Phase 1:** Deploy an Express server that implements Basic Authentication, with signup and signin capabilities, using a Mongo database for storage.
+**Authentication System Phase 1:** Deploy an Express server that implements Basic Authentication, with signup and signin capabilities, using a Postgres database for storage.
 
 ## Before you begin
 
@@ -53,25 +53,25 @@ Today, we begin the first of a 3-Phase build of an authentication system, writte
 
 ### Authentication Modules
 
-Keep your authentication related files in a folder called `/auth` so they are independent of the server itself
+Keep your authentication related files in a folder called `/auth` so they are independent of the server itself.
 
-- Extract the authentication logic for `/signin` as middleware
-  - Create a new node module
-  - Interact with the headers and the users model
-  - Add the user record (if valid) to the request object and call `next()`
-  - Call `next()` with an error in the event of a bad login
-- Extract the mongo/schema into a separate module
-  - Model the user data
-  - Add a pre-save hook in the model ... Before we save a record:
-    - Hash the plain text password given before you save a user to the database
-  - Create a method in the schema to authenticate a user using the hashed password
+- Extract the authentication logic for `/signin` as middleware.
+  - Create a new node module.
+  - Interact with the headers and the users model.
+  - Add the user record (if valid) to the request object and call `next()`.
+  - Call `next()` with an error in the event of a bad login.
+- Extract the Sequelize Model into a separate module.
+  - Model the user data.
+  - Add a before-create hook in the model ... Before we save a record:
+    - Hash the plain text password given before you save a user to the database.
+  - Create a method in the schema to authenticate a user using the hashed password.
 - Create a module to house all of routes for the authentication system.
   - Create a POST route for `/signup`
-    - Accepts either a JSON object or FORM Data with the keys "username" and "password"
-    - Creates a new user record in a Mongo database
-    - Returns a 201 with the created user record
-  - Create a POST route for `/signin`
-    - Use your basic authentication middleware to perform the actual login task
+    - Accepts either a JSON object or FORM Data with the keys "username" and "password".
+    - Creates a new user record in a Postgres database.
+    - Returns a 201 with the created user record.
+  - Create a POST route for `/signin`.
+    - Use your basic authentication middleware to perform the actual login task.
     - `router.post('/signin', basicAuth, (req,res) => {});`
     - When validated, send a JSON object as the response with the following properties:
       - `user`: The users' database record
@@ -88,7 +88,6 @@ Additionally, you are required to write automated tests as well:
   - Do the routes assert the requirements (signup/signin)
 - This is going to require more "end to end" testing that you've done in the past
   - To test signin, your tests actually need to create a user first, then try and login, so there's a dependency built in
-- Ensure that you use supergoose to test your routes and your database
 
 ### Visual Validation
 
